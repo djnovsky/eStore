@@ -7,7 +7,9 @@ import { AdminModule } from './admin/admin.module';
 import { StoreModule } from './store/store.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { RouterModule, Routes } from '@angular/router';
+
 const appRoutes: Routes = [
   { path: 'admin', component: LoginComponent },
   // {path: '', component: StoreComponent}

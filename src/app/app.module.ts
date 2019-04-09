@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { ItemComponent } from './store/item/item.component';
 import { ItemsComponent } from './store/item/items/items.component';
+import {CardModule} from 'primeng/card';
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -28,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     AdminModule,
     StoreModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

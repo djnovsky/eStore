@@ -5,12 +5,11 @@ import { AdminModule } from './admin/admin.module';
 import { StoreModule } from './store/store.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule, Routes} from '@angular/router';
 import { StoreComponent } from './store/store.component';
 import { ItemComponent } from './store/item/item.component';
 import { ItemsComponent } from './store/item/items/items.component';
 import {CardModule} from 'primeng/card';
-
-import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'admin', component: LoginComponent },
@@ -22,6 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ItemComponent,
+    ItemsComponent,
     FooterComponent
   ],
   imports: [

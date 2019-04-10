@@ -11,14 +11,10 @@ import {Items} from '../shared/items.model';
 export class ItemsComponent implements OnInit {
   items: Item[];
 
-  constructor(private is: ItemService) { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    const data = this.is.getData();
-    this.items = [];
-    data.subscribe(o => {
-      this.items = (o as Items).items;
-    });
+    this.itemService.getData().subscribe((resp: Items) => this.items = resp.items);
   }
 
 }

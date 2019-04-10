@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Item} from '../shared/item.model';
 import {ItemService} from '../shared/item.service';
 import {Items} from '../shared/items.model';
@@ -6,7 +6,8 @@ import {Items} from '../shared/items.model';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss']
+  styleUrls: ['./items.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ItemsComponent implements OnInit {
   items: Item[];

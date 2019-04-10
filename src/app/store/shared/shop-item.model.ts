@@ -1,4 +1,4 @@
-export interface Item {
+export interface ShopItemModel {
   id: string;
   photoUrl?: string;
   title: string;

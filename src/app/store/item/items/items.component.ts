@@ -10,7 +10,7 @@ import {Items} from '../shared/items.model';
   encapsulation: ViewEncapsulation.None
 })
 export class ItemsComponent implements OnInit {
-  items: Item[];
+  items: Item[] = [];
 
   constructor(private itemService: ItemService) { }
 

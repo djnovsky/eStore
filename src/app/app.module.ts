@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { StoreModule } from './store/store.module';
@@ -9,7 +10,13 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, AdminModule, StoreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AdminModule,
+    StoreModule,
+    HttpClientModule,
+  ],
   providers: [],
   exports: [],
   bootstrap: [AppComponent],

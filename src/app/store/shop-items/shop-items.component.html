@@ -1,7 +1,7 @@
 <div class="container">
   <div class="p-grid">
     <div class="p-col-3" *ngFor="let item of items">
-      <p-card *ngIf="item" [title]="item.title" [subtitle]="item.price.toString()" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+      <p-card *ngIf="item.price" [title]="item.title" [subtitle]="item.price.toString()" [style]="{width: '360px'}" styleClass="ui-card-shadow">
         <p-header>
           <img src="../../../assets/Tom_the_Cat.jpg" alt="itemPhoto">
         </p-header>

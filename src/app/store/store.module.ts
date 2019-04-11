@@ -1,13 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DropdownModule } from 'primeng/primeng';
+import { CardModule } from 'primeng/card';
+
 import { StoreComponent } from './store.component';
 import { ShopItemsComponent } from './shop-items/shop-items.component';
-import { CardModule } from 'primeng/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [StoreComponent, ShopItemsComponent, ShopItemsComponent],
-  imports: [CommonModule, CardModule, HttpClientModule],
+  declarations: [
+    StoreComponent,
+    ShopItemsComponent,
+    ShopItemsComponent,
+    HeaderComponent,
+  ],
+  imports: [
+    CommonModule,
+    CardModule,
+    DropdownModule,
+    FormsModule,
+    BrowserAnimationsModule,
+  ],
   exports: [StoreComponent],
 })
 export class StoreModule {}

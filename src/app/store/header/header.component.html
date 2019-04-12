@@ -1,6 +1,10 @@
 <p-dropdown [options]="categories"
   [(ngModel)]="category"
+  (onChange)="onCategoryChange()"
   [showTransitionOptions]="'10ms'"
   [hideTransitionOptions]="'10ms'"
   [placeholder]="'Select category'"
   [autoWidth]="false"></p-dropdown>
+
+
+<button (click)="getCategories()">Update categories</button>

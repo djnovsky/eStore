@@ -1,13 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { HeaderService } from './header.service';
+import {SelectItem} from 'primeng/api';
 
 export interface Categories {
   categories: string[];
 }
 
 export interface DropdownCategories {
-  id: number;
+  value: string;
   label: string;
 }
 
@@ -19,21 +20,33 @@ export interface DropdownCategories {
 })
 export class HeaderComponent implements OnInit {
   categories: DropdownCategories[];
+  category: string;
+  @Output() public selectedCategory = new EventEmitter<string>();
 
-  constructor(private headerService: HeaderService) {}
+  constructor(private headerService: HeaderService, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
+    this.getCategories();
+  }
+
+  getCategories() {
     this.headerService
       .getCategories()
-      .pipe(map(resp => resp.categories))
+      .pipe(
+    map(resp => resp.categories))
       .subscribe((categories: string[]) => {
         this.categories = this.transFormCategories(categories);
       });
   }
 
+  public onCategoryChange() {
+    if (!this.category) {return; }
+    this.selectedCategory.emit(this.category);
+  }
+
   private transFormCategories(categories: string[]): DropdownCategories[] {
     return categories.map((category, index) => {
-      return { id: index, label: category };
+      return { value: category, label: category };
     });
   }
 }

@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShopItemService {
+  basicUrl = 'http://localhost:3000/items';
+  categoryUrl = 'category';
   constructor(private http: HttpClient) {}
 
   public getData() {
     const httpOptions = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.get('http://localhost:3000/items', {
+    return this.http.get(this.basicUrl, {
       headers: httpOptions,
     });
+  }
+
+  public getDataByCategory(category: string) {
+    const options = {params: new HttpParams().set('category', category)};
+    return this.http.get(this.basicUrl, options);
   }
   /*
   * GET http://localhost:3000/items

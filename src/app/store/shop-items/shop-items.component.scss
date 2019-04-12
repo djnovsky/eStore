@@ -1,5 +1,12 @@
-.ui-card-header {
-  img {
-    width: 20%
+.shop-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-between;
+
+  .shop-item {
+    .ui-card {
+      flex-basis: 40%
+    }
   }
 }

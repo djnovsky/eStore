@@ -11,7 +11,7 @@ import {Items} from '../shared/items.model';
 })
 export class ShopItemsComponent implements OnInit {
   items: ShopItemModel[];
-
+  headers = ['price', 'description'];
   @Input()
   public set selectedCategory(category: string) {
     this.getItems(category);

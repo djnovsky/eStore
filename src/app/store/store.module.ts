@@ -1,13 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreComponent } from './store.component';
-import { ShopItemsComponent } from './shop-items/shop-items.component';
 import { CardModule } from 'primeng/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { CardComponent } from './card/card.component';
+import { SidebarModule, SplitButtonModule } from 'primeng/primeng';
+import { MenubarModule } from 'primeng/menubar';
+import { FormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
-  declarations: [StoreComponent, ShopItemsComponent, ShopItemsComponent],
-  imports: [CommonModule, CardModule, HttpClientModule],
+  declarations: [StoreComponent, HeaderComponent, CardComponent],
+  imports: [
+    CommonModule,
+    CardModule,
+    SidebarModule,
+    MenubarModule,
+    DialogModule,
+    SplitButtonModule,
+    FormsModule,
+  ],
   exports: [StoreComponent],
 })
 export class StoreModule {}

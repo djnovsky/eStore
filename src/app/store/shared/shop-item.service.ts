@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,12 @@ export class ShopItemService {
     });
     return this.http.get('http://localhost:3000/items', {
       headers: httpOptions,
+    });
+  }
+
+  public getShopItemsByCategory(category) {
+    return this.http.get('http://localhost:3000/items', {
+      params: new HttpParams().set('category', category),
     });
   }
   /*

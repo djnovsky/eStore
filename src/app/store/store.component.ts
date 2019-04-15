@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.component.scss'],
 })
 export class StoreComponent implements OnInit {
+  public selectedCategory;
   constructor() {}
 
   ngOnInit() {}
+
+  public onCategorySelected(category) {
+    this.selectedCategory = category;
+  }
 }

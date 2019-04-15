@@ -2,18 +2,10 @@ footer {
   width: 98%;
   padding: 1%;
   border: 2px solid silver;
-  border-radius: 2px;
-  margin-top: 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+
+
 }
-.aboutAs {
-  float: left;
-  width: 30%;
-}
-.contacts {
-  float: left;
-  width: 35%;
-}
-.rights {
-  float: right;
-  width: 35%;
-}
+
+

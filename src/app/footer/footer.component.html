@@ -1,9 +1,19 @@
+
 <footer>
-<div class="aboutAs">
-Info
-</div>
-<div class="contacts">
-  Tel Numbers, Mails
-</div>
-<div class="rights">All rights reserved &copy;{{year}}</div>
+    <div class="ui-g">
+        <div class="ui-g-4">
+            <p-menubar [model]="infos">
+
+              </p-menubar>
+        </div>
+        <div class="ui-g-4">
+
+            <p-menubar [model]="items">
+
+            </p-menubar>
+
+        </div>
+        <div class="ui-g-4">All rights reserved &copy;{{year}}</div>
+    </div>
+
 </footer>

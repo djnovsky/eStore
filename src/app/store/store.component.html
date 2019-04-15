@@ -1,1 +1,2 @@
-<app-items></app-items>
+<app-header (selectedCategory)="onCategorySelected($event)"></app-header>
+<app-card [selectedCategory]="selectedCategory"></app-card>

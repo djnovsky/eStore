@@ -1,13 +1,13 @@
 <ul class="card" *ngFor="let item of items">
 
     <li *ngIf="items">
-      <img (click)="showDialog()" src="../../assets/img/samsung-j2-2018-sm-j250g-original-imaf4uwk3udf3uj4.jpeg" alt="">
+      <img (click)="showDialog()" src="../../../../assets/img/samsung-j2-2018-sm-j250g-original-imaf4uwk3udf3uj4.jpeg" alt="">
       <p class="text" (click)="showDialog()">{{item.description}}</p>
       <p class="price" (click)="showDialog()">{{item.price}} $</p>
-  
+
       <button pButton type="button" label="Добавити в корзину" class="ui-button-secondary" (click)="save()"></button>
-        
-      
+
+
     </li>
   </ul>
   <p-dialog header="" [(visible)]="display">
@@ -16,10 +16,10 @@
             <img src="../../assets/img/samsung-j2-2018-sm-j250g-original-imaf4uwk3udf3uj4.jpeg" alt="">
             <p class="text">Samsung S4000</p>
             <p class="price">700 $</p>
-        
+
             <button pButton type="button" label="Добавити в корзину" class="ui-button-secondary" (click)="save()"></button>
-              
-            
+
+
           </li>
         </ul>
   </p-dialog>

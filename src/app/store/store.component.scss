@@ -1,0 +1,13 @@
+
+.container {
+   padding: 0 20px;
+}
+
+body .ui-paginator {
+   border: none;
+   padding: 15px 0;
+   background-color: #fff;
+}
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+   background-color: #c8c8c8;
+}

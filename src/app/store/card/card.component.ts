@@ -14,7 +14,8 @@ export class CardComponent implements OnInit {
   public set selectedCategory(category: string) {
     this.getShopItemsByCategory(category);
   }
-
+  selectedValue: string = "red";
+  
   display = false;
   cardItem: any = [];
   item: any = {};
@@ -26,10 +27,12 @@ export class CardComponent implements OnInit {
     this.shopItemsService
       .getData()
       .subscribe((resp: Items) => (this.items = resp.items));
-  }
+  };
+
 
   showDialog() {
     this.display = true;
+    
   }
 
   save() {
@@ -43,4 +46,5 @@ export class CardComponent implements OnInit {
       .getShopItemsByCategory(category)
       .subscribe((resp: Items) => (this.items = resp.items));
   }
+
 }

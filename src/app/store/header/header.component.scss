@@ -14,6 +14,21 @@
    font-size: 16px;
    letter-spacing: 1px;
 }
+.ui-menubar:after {
+   content: "";
+   clear: none;
+   
+}
+body .ui-corner-all {
+   border-radius: 0;
+}
+
+ul {
+   
+   align-content: center;
+}
+
+
 
 body {
    margin: 0;
@@ -70,16 +85,19 @@ body {
       }
       p-menubar{
          .ui-menubar {
-            background-color: #eaeaea;
+            background-color:#c8c8c8;
             border: none;
+       
+ 
             p-menubarsub {
                .ui-menubar-root-list{
-                  
+                 
                   display: flex;
                   justify-content: center;
                   .ui-menuitem{
                      border:none;
                   }
+                  
                }
             
             }    

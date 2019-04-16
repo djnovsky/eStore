@@ -1,2 +1,7 @@
+
 <app-header (selectedCategory)="onCategorySelected($event)"></app-header>
-<app-card [selectedCategory]="selectedCategory"></app-card>
+<div class="container">
+   <app-card [selectedCategory]="selectedCategory"></app-card>
+   <p-paginator [rows]="10" totalRecords="100" (onPageChange)="paginate($event)"></p-paginator>
+</div>
+

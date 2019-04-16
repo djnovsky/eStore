@@ -17,4 +17,9 @@ export class HeaderServiceService {
       .get(this.resourse + this.url)
       .pipe(catchError(err => throwError('Something went wrong')));
   }
+
+  // onPageChage() {
+  //   this.http.get('http://localhost:3000/items', {
+  //     params: new HttpParams().set('pageNumber', yourpageNumber).set('pageSize', yourpageSize)}
+  // }
 }

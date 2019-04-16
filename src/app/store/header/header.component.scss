@@ -34,6 +34,9 @@ body {
    margin: 0;
    font-family: "Open Sans", "Helvetica Neue", sans-serif;
    }
+body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
+      color: #fff;
+   }   
 
 
    .header{
@@ -85,7 +88,9 @@ body {
       }
       p-menubar{
          .ui-menubar {
-            background-color:#c8c8c8;
+            background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
+            background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+            padding: 13px;
             border: none;
        
  

@@ -21,6 +21,21 @@ export class ShopItemService {
       params: new HttpParams().set('category', category),
     });
   }
+
+  public getPaginator(pageNumber, pageSize, category?) {
+    let queryParams = new HttpParams()
+      .set('pageNumber', pageNumber)
+      .set('pageSize', pageSize);
+
+    if (category) {
+      queryParams = queryParams.append('category', category);
+    }
+
+    return this.http.get('http://localhost:3000/items', {
+      params: queryParams,
+    });
+  }
+
   /*
   * GET http://localhost:3000/items
 returns list of all shop-items from the DB

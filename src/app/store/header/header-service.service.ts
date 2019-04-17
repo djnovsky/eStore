@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators';
 
@@ -17,9 +17,4 @@ export class HeaderServiceService {
       .get(this.resourse + this.url)
       .pipe(catchError(err => throwError('Something went wrong')));
   }
-
-  // onPageChage() {
-  //   this.http.get('http://localhost:3000/items', {
-  //     params: new HttpParams().set('pageNumber', yourpageNumber).set('pageSize', yourpageSize)}
-  // }
 }

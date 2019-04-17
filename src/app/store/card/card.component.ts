@@ -12,10 +12,20 @@ import { Items } from '../shared/items.model';
 export class CardComponent implements OnInit {
   @Input()
   public set selectedCategory(category: string) {
-    this.getShopItemsByCategory(category);
+    this.getShopItemsByCategory(category, 1);
+    this._selectedCategory = category;
   }
-  selectedValue: string = "red";
-  
+
+  public get selectedCategory() {
+    return this._selectedCategory;
+  }
+  public pageSize = 10;
+
+  /**
+   * Private field for caching selected category
+   */
+  private _selectedCategory: string;
+
   display = false;
   cardItem: any = [];
   item: any = {};
@@ -24,15 +34,11 @@ export class CardComponent implements OnInit {
   constructor(private shopItemsService: ShopItemService) {}
 
   ngOnInit() {
-    this.shopItemsService
-      .getData()
-      .subscribe((resp: Items) => (this.items = resp.items));
-  };
-
+    this.getPaginatedShopItems(1);
+  }
 
   showDialog() {
     this.display = true;
-    
   }
 
   save() {
@@ -41,10 +47,18 @@ export class CardComponent implements OnInit {
     console.log(this.cardItem);
   }
 
-  getShopItemsByCategory(category) {
-    this.shopItemsService
-      .getShopItemsByCategory(category)
-      .subscribe((resp: Items) => (this.items = resp.items));
+  getShopItemsByCategory(category, pageNumber?) {
+    this.getPaginatedShopItems(pageNumber, category);
   }
 
+  public paginate(event) {
+    const page = Number(event.page) + 1;
+    this.getPaginatedShopItems(page, this.selectedCategory);
+  }
+
+  private getPaginatedShopItems(pageNumber, category?) {
+    this.shopItemsService
+      .getPaginator(pageNumber, this.pageSize, category)
+      .subscribe((resp: Items) => (this.items = resp.items));
+  }
 }

@@ -8,11 +8,17 @@ import { SidebarModule, SplitButtonModule } from 'primeng/primeng';
 import { MenubarModule } from 'primeng/menubar';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-import {PaginatorModule} from 'primeng/paginator';
-import {RadioButtonModule} from 'primeng/radiobutton';
+import { PaginatorModule } from 'primeng/paginator';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { ShopItemDialogComponent } from './shop-item-dialog/shop-item-dialog.component';
 
 @NgModule({
-  declarations: [StoreComponent, HeaderComponent, CardComponent],
+  declarations: [
+    StoreComponent,
+    HeaderComponent,
+    CardComponent,
+    ShopItemDialogComponent,
+  ],
   imports: [
     CommonModule,
     CardModule,
@@ -22,7 +28,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     SplitButtonModule,
     FormsModule,
     PaginatorModule,
-    RadioButtonModule
+    RadioButtonModule,
   ],
   exports: [StoreComponent],
 })

@@ -1,0 +1,12 @@
+<p-dialog [(visible)]="visible" [transitionOptions]="'400ms'">
+  <!--<div>-->
+    <!--<li *ngIf="items">-->
+      <!--<img (click)="showDialog()" src="../../../assets/img/samsung15png.png" alt="">-->
+      <!--<p class="text" (click)="showDialog()">{{item.description}}</p>-->
+      <!--<p class="price" (click)="showDialog()">{{item.price}} $</p>-->
+      <!--<div class="button">-->
+      <!--</div>-->
+    <!--</li>-->
+  <!--</div>-->
+  <span *ngIf="selectedShopItem">{{selectedShopItem.title}}</span>
+</p-dialog>

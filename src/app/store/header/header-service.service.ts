@@ -17,5 +17,4 @@ export class HeaderServiceService {
       .get(this.resourse + this.url)
       .pipe(catchError(err => throwError('Something went wrong')));
   }
- 
 }

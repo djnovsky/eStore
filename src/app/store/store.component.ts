@@ -15,8 +15,4 @@ export class StoreComponent implements OnInit {
   public onCategorySelected(category) {
     this.selectedCategory = category;
   }
-
-  
-  
-  
 }

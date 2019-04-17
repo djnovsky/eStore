@@ -27,6 +27,8 @@ export class CardComponent implements OnInit {
     this.shopItemsService
       .getData()
       .subscribe((resp: Items) => (this.items = resp.items));
+    // this.shopItemsService.getPaginator(1, 10).subscribe((resp: Items) => (this.items = resp.items))
+
   };
 
 
@@ -45,6 +47,13 @@ export class CardComponent implements OnInit {
     this.shopItemsService
       .getShopItemsByCategory(category)
       .subscribe((resp: Items) => (this.items = resp.items));
+  }
+
+  public paginate(event) {
+    
+    this.shopItemsService.getPaginator(1, 10).subscribe((resp: Items) => (this.items = resp.items))
+    console.log(event)
+
   }
 
 }

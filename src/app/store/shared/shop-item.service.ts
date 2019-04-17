@@ -21,6 +21,20 @@ export class ShopItemService {
       params: new HttpParams().set('category', category),
     });
   }
+
+  public getPaginator(pageNumber, pageSize) {
+    return this.http.get(
+      'http://localhost:3000/items',
+    {
+     params: new HttpParams()
+      .set('pageNumber', pageNumber)
+      .set('pageSize', pageSize)
+      // .set('category', category)
+    });
+  }
+
+
+
   /*
   * GET http://localhost:3000/items
 returns list of all shop-items from the DB

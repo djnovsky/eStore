@@ -1,0 +1,10 @@
+<p>You have {{items.length}} items in your basket.</p>
+<p>Total: {{total() | currency:'USD':'$'}}</p>
+<ul class="card" *ngFor="let item of items">
+
+  <li *ngIf="items">
+    <img src="../../../assets/img/samsung15png.png" alt="" width="70px" height="70px">
+    <p class="text">{{item.description}}</p>
+    <p class="price">{{item.price}} $</p>
+  </li>
+</ul>

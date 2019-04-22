@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { BasketComponent } from './header/basket/basket.component';
 
 @NgModule({
-  declarations: [StoreComponent, HeaderComponent, CardComponent],
+  declarations: [StoreComponent, HeaderComponent, CardComponent, BasketComponent],
   imports: [
     CommonModule,
     CardModule,

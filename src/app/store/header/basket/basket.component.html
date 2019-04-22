@@ -1,10 +1,19 @@
-<p>You have {{items.length}} items in your basket.</p>
-<p>Total: {{total() | currency:'USD':'$'}}</p>
-<ul class="card" *ngFor="let item of items">
+<p>У вашій корзині {{items.length}} товарів </p>
 
-  <li *ngIf="items">
-    <img src="../../../assets/img/samsung15png.png" alt="" width="70px" height="70px">
-    <p class="text">{{item.description}}</p>
+<hr>
+<div class="p-grid" *ngFor="let item of items">
+  <div class="p-col-4"><img src="../../../../assets/kisspng-samsung-galaxy-j7.jpg" alt="" width="200" height="150"></div>
+  <div class="p-col-8">
+    <p class="title"><b>{{item.title}}</b></p>
+    <p class="category">{{item.category}}</p>
+    <p class="subcategory">{{item.subcategory}}</p>
     <p class="price">{{item.price}} $</p>
-  </li>
-</ul>
+    <button>Видалити з корзини</button>
+  </div>
+
+</div>
+<p>Загальна ціна : {{total() | currency:'USD':'$'}}</p>
+<hr>
+<button pButton type="button" label="Success" class="ui-button-rounded ui-button-success"></button>
+
+

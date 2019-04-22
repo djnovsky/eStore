@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
   public items = [
-    {description: 'some description', title: 'Potato', price: 500},
-    {description: 'more description', title: 'Milk' , price: 300},
-    {description: 'more description', title: 'Cheese' , price: 200},
-    {description: 'more description', title: 'iphone' , price: 100},
-    {description: 'more description', title: 'Samsung' , price: 700},
-    {description: 'more description', title: 'Gread' , price: 800},
-    {description: 'more description', title: 'fdsk' , price: 550},
+    {title: 'Potato', category: 'Eat', subcategory: 'vegetables', price: 500},
+    {title: 'Milk' , category: 'Eat', subcategory: 'dairy products', price: 300},
+    {title: 'Cheese' , category: 'Eat', subcategory: 'dairy products', price: 200},
+    { title: 'iphone' , category: 'Phones', subcategory: 'IOS', price: 100},
+    {title: 'Samsung' , category: 'Phones', subcategory: 'Android', price: 700},
+    {title: 'Gread' , category: 'Other', subcategory: 'Soneone', price: 800},
+    {title: 'fdsk' , category: 'Other', subcategory: 'Somesecond', price: 550},
   ];
   constructor() {
   }

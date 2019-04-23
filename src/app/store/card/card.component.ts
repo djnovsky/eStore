@@ -30,6 +30,9 @@ export class CardComponent implements OnInit {
   cardItem: any = [];
   item: any = {};
   items: ShopItemModel[];
+  //selectedValue: string = 'red';
+  public visible: boolean = false;
+  public selectedShopItem: ShopItemModel;
 
   constructor(private shopItemsService: ShopItemService) {}
 
@@ -37,8 +40,10 @@ export class CardComponent implements OnInit {
     this.getPaginatedShopItems(1);
   }
 
-  showDialog() {
-    this.display = true;
+  showDialog(shopItem: ShopItemModel) {
+    this.visible = true;
+    this.selectedShopItem = shopItem;
+    //console.log(shopItem);
   }
 
   save() {

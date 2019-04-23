@@ -13,7 +13,7 @@ export class HeaderServiceService {
 
   public getCategories(): Observable<any> {
     return this.http
-      .get(this.apiUrl + '/items')
+      .get(this.apiUrl + '/items/categories')
       .pipe(catchError(err => throwError('Something went wrong')));
   }
 }

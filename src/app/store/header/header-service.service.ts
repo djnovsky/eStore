@@ -7,14 +7,13 @@ import { catchError } from 'rxjs/internal/operators';
   providedIn: 'root',
 })
 export class HeaderServiceService {
-  private resourse = 'http://localhost:3000/items/';
-  private url = 'categories';
+  private apiUrl = 'https://infinite-meadow-81352.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 
   public getCategories(): Observable<any> {
     return this.http
-      .get(this.resourse + this.url)
+      .get(this.apiUrl + '/items')
       .pipe(catchError(err => throwError('Something went wrong')));
   }
 }

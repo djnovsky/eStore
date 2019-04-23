@@ -9,17 +9,11 @@
          <button pButton type="button" label="Пошук"></button>
          <input type="text" pInputText 
          placeholder="введіть назву товару" 
-         [(ngModel)]="seachStr"
-         >
-       <p-dialog header="Вибрані товари" [(visible)]="display" [modal]="true" [responsive]="true" [width]="700" [minWidth]="200" [minY]="70"
-                 [maximizable]="true" [baseZIndex]="10000">
+         [(ngModel)]="seachStr">
 
+       <p-sidebar [(visible)]="display" position="right">
          <app-basket></app-basket>
-         <p-footer>
-
-           <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
-         </p-footer>
-       </p-dialog>
+       </p-sidebar>
        <button class="card" type="text" (click)="showDialog()" pButton label="Корзина"></button>
               
      </div>

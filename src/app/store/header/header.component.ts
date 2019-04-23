@@ -4,6 +4,7 @@ import {
   OnInit,
   Output,
   ViewEncapsulation,
+
 } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { HeaderServiceService } from './header-service.service';
@@ -18,8 +19,10 @@ import { Categories } from '../shared/items.model';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   @Output() public selectedCategory = new EventEmitter();
-  display: boolean = false;
-  constructor(private headerService: HeaderServiceService) {}
+  display = false;
+
+  constructor(private headerService: HeaderServiceService) {
+  }
 
   ngOnInit() {
     this.getCategories();
@@ -46,7 +49,9 @@ export class HeaderComponent implements OnInit {
       };
     });
   }
+
   showDialog() {
     this.display = true;
   }
 }
+

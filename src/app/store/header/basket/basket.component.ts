@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
@@ -12,14 +13,19 @@ export class BasketComponent implements OnInit {
     {title: 'Cheese' , category: 'Eat', subcategory: 'dairy products', price: 200},
     { title: 'iphone' , category: 'Phones', subcategory: 'IOS', price: 100},
     {title: 'Samsung' , category: 'Phones', subcategory: 'Android', price: 700},
-    {title: 'Gread' , category: 'Other', subcategory: 'Soneone', price: 800},
-    {title: 'fdsk' , category: 'Other', subcategory: 'Somesecond', price: 550},
+    {title: 'Bread' , category: 'Eat', subcategory: 'Soneone', price: 800},
+    {title: 'AnyManySomeOneMuch' , category: 'Other', subcategory: 'Somesecond', price: 550},
   ];
+  public draw = false;
   constructor() {
   }
   ngOnInit() {
   }
   public total() {
     return this.items.reduce((total, item) => total + item.price, 0);
+  }
+
+  drawUp() {
+    this.draw = true;
   }
 }

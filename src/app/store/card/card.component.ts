@@ -10,6 +10,7 @@ import { Items } from '../shared/items.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class CardComponent implements OnInit {
+  public like = true;
   @Input()
   public set selectedCategory(category: string) {
     this.getShopItemsByCategory(category, 1);
@@ -35,6 +36,9 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     this.getPaginatedShopItems(1);
+  }
+  putLike() {
+    this.like = !this.like;
   }
 
   showDialog() {

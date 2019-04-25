@@ -22,6 +22,10 @@ export class ShopItemService {
     });
   }
 
+  public  getItemsLength() {
+    return this.http.get(this.apiUrl + '/items')
+  }
+
   public getPaginator(pageNumber, pageSize, category?) {
     let queryParams = new HttpParams()
       .set('pageNumber', pageNumber)

@@ -15,10 +15,11 @@
 
   </ul>
 
+
   <app-shop-item-dialog [selectedShopItem]="selectedShopItem" [(visible)]="visible"></app-shop-item-dialog>
 
   <div class="pagination">
-      <p-paginator [rows]="pageSize" totalRecords="100" (onPageChange)="paginate($event)"></p-paginator>
+      <p-paginator [rows]="pageSize" totalRecords="{{pageCount}}" (onPageChange)="paginate($event)"></p-paginator>
   </div>
 
   <p-dialog header="" [(visible)]="display" [transitionOptions]="'400ms'">

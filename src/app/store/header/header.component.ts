@@ -18,7 +18,9 @@ import { Categories } from '../shared/items.model';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   @Output() public selectedCategory = new EventEmitter();
+  @Output() public searchProduct = new EventEmitter();
   display: boolean = false;
+  seachStr: string= '';
   constructor(private headerService: HeaderServiceService) {}
 
   ngOnInit() {
@@ -49,4 +51,7 @@ export class HeaderComponent implements OnInit {
   showDialog() {
     this.display = true;
   }
+    public search() {
+      this.searchProduct.emit(this.seachStr);
+    }
 }

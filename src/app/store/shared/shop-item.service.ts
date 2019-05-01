@@ -23,6 +23,13 @@ export class ShopItemService {
     });
   }
 
+  // пошук
+  public searchProsucts(searchParams) {
+    return this.http.get(this.apiUrl + '/items', {
+      params: new  HttpParams().set('searchParams', searchParams)
+      });
+  }
+
   public getPaginator(pageNumber, pageSize, category?) {
     let queryParams = new HttpParams()
       .set('pageNumber', pageNumber)

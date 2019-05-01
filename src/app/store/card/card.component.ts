@@ -19,6 +19,20 @@ export class CardComponent implements OnInit {
   public get selectedCategory() {
     return this._selectedCategory;
   }
+
+    @Input() public set inputSearch(inputSearch){
+      this._inputSearch = inputSearch;
+      // console.log(this._inputSearch);
+        if (this._inputSearch) {
+            this.getsearchResult(this._inputSearch)
+        }
+  }
+
+    public get inputSearch(){
+     return   this._inputSearch;
+    }
+
+  private _inputSearch: string;
   public pageSize = 10;
 
   /**
@@ -30,6 +44,7 @@ export class CardComponent implements OnInit {
   cardItem: any = [];
   item: any = {};
   items: ShopItemModel[];
+  itemInfo: any = [];
 
   constructor(private shopItemsService: ShopItemService) {}
 
@@ -37,8 +52,9 @@ export class CardComponent implements OnInit {
     this.getPaginatedShopItems(1);
   }
 
-  showDialog() {
+  showDialog(item) {
     this.display = true;
+    this.itemInfo = item;
   }
 
   save() {
@@ -60,5 +76,18 @@ export class CardComponent implements OnInit {
     this.shopItemsService
       .getPaginator(pageNumber, this.pageSize, category)
       .subscribe((resp: Items) => (this.items = resp.items));
+  }
+
+  public getsearchResult(seachStr) {
+    this.shopItemsService
+        .searchProsucts(seachStr)
+        .subscribe((response: Items ) => {
+                  this.items = response.items;
+              },
+            error => {
+              alert(error.statusText);
+              console.log(error);
+            }
+        );
   }
 }

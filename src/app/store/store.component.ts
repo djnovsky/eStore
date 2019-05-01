@@ -8,11 +8,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
   public selectedCategory;
+  public search: string;
   constructor() {}
 
   ngOnInit() {}
 
   public onCategorySelected(category) {
     this.selectedCategory = category;
+  }
+  public  onSearch(s) {
+    this.search = s;
+    console.log('onSearch in store component',s)
   }
 }

@@ -6,7 +6,7 @@
      </div>
      <div class="header_up_right">
       
-         <button pButton type="button" label="Пошук"></button>
+         <button pButton (click)="search()" type="button" label="Пошук"></button>
          <input type="text" pInputText 
          placeholder="введіть назву товару" 
          [(ngModel)]="seachStr">

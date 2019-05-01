@@ -1,5 +1,5 @@
 
-<app-header (selectedCategory)="onCategorySelected($event)"></app-header>
+<app-header (searchProduct)="onSearch($event)" (selectedCategory)="onCategorySelected($event)"></app-header>
 <div class="container">
    <div class="menu_left">
       <div class="menu_left_fixed">
@@ -28,7 +28,7 @@
       </div>     
    </div>
    <div class="content_right">
-         <app-card [selectedCategory]="selectedCategory"></app-card>
+         <app-card [inputSearch]="search" [selectedCategory]="selectedCategory"></app-card>
    </div>
   
    

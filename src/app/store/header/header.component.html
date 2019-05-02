@@ -1,4 +1,3 @@
-
 <div class="header">
    <div class="header_up">
      <div class="header_up_left">
@@ -10,24 +9,17 @@
          <button pButton type="button" label="Пошук"></button>
          <input type="text" pInputText 
          placeholder="введіть назву товару" 
-         [(ngModel)]="seachStr"
-         > 
-         <p-sidebar [(visible)]="display" position="right">
-             Вміст корзини...
-             {{cardItem}}fdsfsdfsd
-         </p-sidebar>
-         <button class="card" type="text" (click)="display = true" pButton label="Корзина"></button>
+         [(ngModel)]="seachStr">
+
+       <p-sidebar [(visible)]="display" position="right">
+         <app-basket></app-basket>
+       </p-sidebar>
+       <button class="card" type="text" (click)="showDialog()" pButton label="Корзина"></button>
               
      </div>
   
    <p-menubar [model]="items" >
      </p-menubar>
-   <!-- <div class="header_down">
-        
-    
-   </div> -->
-     
+
  </div>
  </div>
- 
- 

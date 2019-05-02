@@ -5,19 +5,20 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ShopItemService {
+  private apiUrl = 'https://infinite-meadow-81352.herokuapp.com';
   constructor(private http: HttpClient) {}
 
   public getData() {
     const httpOptions = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.get('http://localhost:3000/items', {
+    return this.http.get(this.apiUrl + '/items', {
       headers: httpOptions,
     });
   }
 
   public getShopItemsByCategory(category) {
-    return this.http.get('http://localhost:3000/items', {
+    return this.http.get(this.apiUrl + '/items', {
       params: new HttpParams().set('category', category),
     });
   }
@@ -35,22 +36,8 @@ export class ShopItemService {
       queryParams = queryParams.append('category', category);
     }
 
-    return this.http.get('http://localhost:3000/items', {
+    return this.http.get(this.apiUrl + '/items', {
       params: queryParams,
     });
   }
-
-  /*
-  * GET http://localhost:3000/items
-returns list of all shop-items from the DB
-GET http://localhost:3000/items?itemIds=5ca4cb59b971de1cd0eab92e,5ca6194f5518432ecc49719a,5ca63a0f8b04c825f0d856da
-returns all shop-items with such ids . If pass one id than get one item
-GET http://localhost:3000/items?searchParams=’some search params’
-returns list of selected  by searchParams  shop-items
-GET http://localhost:3000/items/categories
-returns all existing categories. One item should belong to one category
-GET http://localhost:3000/items?category=categoryName
-returns list of selected  by categoryName shop-items
-*Infinite scroll or pagination
-*GET http://localhost:3000/items?pageNumber=pageNumber&pageSize=pageSize*/
 }

@@ -18,7 +18,7 @@ import { Categories } from '../shared/items.model';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   @Output() public selectedCategory = new EventEmitter();
-
+  display: boolean = false;
   constructor(private headerService: HeaderServiceService) {}
 
   ngOnInit() {
@@ -45,5 +45,8 @@ export class HeaderComponent implements OnInit {
         command: () => this.onCategorySelected(category),
       };
     });
+  }
+  showDialog() {
+    this.display = true;
   }
 }

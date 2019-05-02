@@ -1,9 +1,9 @@
 <ul class="card" *ngFor="let item of items">
 
     <li *ngIf="items">
-      <img (click)="showDialog()" src="../../../assets/img/samsung15png.png" alt="">
-      <p class="text" (click)="showDialog()">{{item.description}}</p>
-      <p class="price" (click)="showDialog()">{{item.price}} $</p>
+      <img src="../../../assets/img/samsung15png.png" alt="">
+      <p class="text">{{item.description}}</p>
+      <p class="price">{{item.price}} $</p>
 
       <div class="icon" (click)="putLike(item)">
       <div *ngIf="item.checked; else star">
@@ -15,11 +15,8 @@
       </div>
 
       <div class="button">
-        <button pButton type="button" label="Добавити в корзину"
-         class="ui-button-secondary" (click)="save()"></button>
-        <button  pButton type="button" label="Характеристики"
-        class="ui-button-secondary" (click)="showDialog()"> </button>
-
+        <button pButton type="button" label="Добавити в корзину" class="ui-button-secondary" (click)="save()"></button>
+        <button  pButton type="button" label="Характеристики" class="ui-button-secondary" (click)="showDialog(item)"> </button>
       </div>
 
 
@@ -27,20 +24,21 @@
     </li>
 
   </ul>
+
+
+  <app-shop-item-dialog [selectedShopItem]="selectedShopItem" [(visible)]="visible"></app-shop-item-dialog>
+
   <div class="pagination">
-      <p-paginator [rows]="pageSize" totalRecords="100" (onPageChange)="paginate($event)"></p-paginator>
+      <p-paginator [rows]="pageSize" totalRecords="{{pageCount}}" (onPageChange)="paginate($event)"></p-paginator>
   </div>
 
   <p-dialog header="" [(visible)]="display" [transitionOptions]="'400ms'">
     <div>
-
-
       <li *ngIf="items">
           <img (click)="showDialog()" src="../../../assets/img/samsung15png.png" alt="">
           <p class="text" (click)="showDialog()">{{item.description}}</p>
           <p class="price" (click)="showDialog()">{{item.price}} $</p>
           <div class="button">
-
           </div>
 
           </li>

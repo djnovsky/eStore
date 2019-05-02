@@ -2,18 +2,18 @@
 
 <hr>
 <div class="p-grid" *ngFor="let item of items">
-  <div class="p-col-4"><img src="../../../../assets/kisspng-samsung-galaxy-j7.jpg" alt="" width="200" height="150"></div>
-  <div class="p-col-8">
+  <div class="p-col-4"><img src="../../../../assets/kisspng-samsung-galaxy-j7.jpg" alt="" width="80" height="70"></div>
+  <div class="p-col-7 p-offset-1">
     <p class="title"><b>{{item.title}}</b></p>
     <p class="category">{{item.category}}</p>
     <p class="subcategory">{{item.subcategory}}</p>
     <p class="price">{{item.price}} $</p>
-    <button>Видалити з корзини</button>
+    <button class="baskt-btn" (click)="delBasket()">Видалити з корзини</button>
   </div>
 
 </div>
 <p>Загальна ціна : {{total() | currency:'USD':'$'}}</p>
 <hr>
-<button pButton type="button" label="Success" class="ui-button-rounded ui-button-success"></button>
+<button pButton type="button" label="Оформити замовлення" class="ui-button-success"></button>
 
 

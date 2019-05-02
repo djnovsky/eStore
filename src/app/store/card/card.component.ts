@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/internal/Observable';
   encapsulation: ViewEncapsulation.None,
 })
 export class CardComponent implements OnInit {
+  public like = true;
   @Input()
   public set selectedCategory(category: string) {
     this.getShopItemsByCategory(category, 1);
@@ -44,6 +45,10 @@ export class CardComponent implements OnInit {
     this.shopItemsService.getItemsLength().subscribe((resp: Items) => {
       this.pageCount = resp.items.length;
     });
+  }
+  putLike(card: any) {
+    card.checked = !card.checked;
+    // this.like = !this.like;
   }
 
   showDialog(shopItem: ShopItemModel) {

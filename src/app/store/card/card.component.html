@@ -1,11 +1,20 @@
 <ul class="card" *ngFor="let item of items">
 
     <li *ngIf="items">
-      <img src="../../../assets/img/samsung15png.png" alt="">
       <div  (click)="showDialog(item)">
+        <img src="../../../assets/img/samsung15png.png" alt="">
         <p class="text">{{item.description}}</p>
         <p class="price">{{item.price}} $</p>
       </div>
+      <div class="icon" (click)="putLike(item)">
+      <div *ngIf="item.checked; else star">
+         <i class="pi pi-star"> </i>
+      </div>
+        <ng-template #star>
+          <i class="pi pi-star-o"></i>
+        </ng-template>
+      </div>
+
       <div class="button">
         <button pButton type="button" label="Добавити в корзину" class="ui-button-secondary" (click)="save()"></button>
         <button  pButton type="button" label="Характеристики" class="ui-button-secondary" (click)="showDialog(item)"> </button>
@@ -26,8 +35,6 @@
 
   <p-dialog header="" [(visible)]="display" [transitionOptions]="'400ms'">
     <div>
-
-
       <li *ngIf="items">
           <img src="../../../assets/img/samsung15png.png" alt="">
           <p class="text">{{item.description}}</p>

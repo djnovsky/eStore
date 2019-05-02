@@ -16,8 +16,8 @@ app-card{
       padding: 0;
       margin: 0.7em 0.7em 0 0;
       box-shadow: 0 0 5px rgba(207, 207, 207, 0.5);
-      
-     
+
+
 
 
       li{
@@ -25,7 +25,7 @@ app-card{
          height: 100%;
          padding: 6px;
          position: relative;
-         
+
          img{
             cursor: pointer;
             width: 133px;
@@ -36,25 +36,25 @@ app-card{
             margin: 5px 5px;
             font-size: 13px;
             color: black;
-            
+
          }
          .price{
             margin: 5px 5px 10px 5px;
             cursor: pointer;
             color: black;
-         }   
+         }
          button{
             font-size: 12px;
             opacity: 0;
             margin-bottom: 15px;
             background-color: #fff;
-           
 
-         
+
+
          }
       }
    }
-}   
+}
 
 
 li {
@@ -64,9 +64,9 @@ list-style: none;
 .card:hover{
    transform: scale(1.02);
    transition: 0.4s;
-  
-  
-   
+
+
+
 }
 .card:hover button{
    opacity: 1;
@@ -80,10 +80,20 @@ list-style: none;
    left: 10px;
    right: 10px;
 
- 
+
+}
+.icon {
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  font-size: 2em;
+
+
+
 }
 
 .pagitanor{
    align-items: center;
 }
-

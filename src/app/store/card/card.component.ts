@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ShopItemService } from '../shared/shop-item.service';
 import { ShopItemModel } from '../shared/shop-item.model';
 import { Items } from '../shared/items.model';
-import {Observable} from "rxjs/internal/Observable";
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-card',
@@ -34,18 +34,16 @@ export class CardComponent implements OnInit {
   //selectedValue: string = 'red';
   public visible: boolean = false;
   public selectedShopItem: ShopItemModel;
-  pageCount:number ;
+  pageCount: number;
 
   constructor(private shopItemsService: ShopItemService) {}
 
   ngOnInit() {
     this.getPaginatedShopItems(1);
 
-
-    this.shopItemsService.getItemsLength().subscribe((resp:Items)=>{
+    this.shopItemsService.getItemsLength().subscribe((resp: Items) => {
       this.pageCount = resp.items.length;
-    })
-
+    });
   }
 
   showDialog(shopItem: ShopItemModel) {

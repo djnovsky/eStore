@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ShopItemModel} from "../store/shared/shop-item.model";
+import { ShopItemModel } from '../store/shared/shop-item.model';
 
 @Component({
   selector: 'app-shop-item-dialog',

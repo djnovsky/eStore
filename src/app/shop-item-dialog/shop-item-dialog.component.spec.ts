@@ -8,9 +8,8 @@ describe('ShopItemDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShopItemDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [ShopItemDialogComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

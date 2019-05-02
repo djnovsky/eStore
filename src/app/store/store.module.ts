@@ -13,7 +13,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { BasketComponent } from './header/basket/basket.component';
 import { TableModule } from 'primeng/table';
 import { DataViewModule } from 'primeng/dataview';
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
+import { ShopItemDialogComponent } from '../shop-item-dialog/shop-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ButtonModule} from 'primeng/button';
     HeaderComponent,
     CardComponent,
     BasketComponent,
+    ShopItemDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,7 @@ import {ButtonModule} from 'primeng/button';
     TableModule,
     PanelModule,
     DataViewModule,
-    ButtonModule
+    ButtonModule,
   ],
   exports: [StoreComponent],
 })

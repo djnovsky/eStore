@@ -6,4 +6,5 @@ export interface ShopItemModel {
   description: string;
   category: string;
   inBasket: boolean;
+  checked?: boolean;
 }

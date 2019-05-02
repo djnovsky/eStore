@@ -37,8 +37,9 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     this.getPaginatedShopItems(1);
   }
-  putLike() {
-    this.like = !this.like;
+  putLike(card: any) {
+    card.checked = !card.checked;
+    // this.like = !this.like;
   }
 
   showDialog() {

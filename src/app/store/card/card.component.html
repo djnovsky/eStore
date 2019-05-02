@@ -5,12 +5,12 @@
       <p class="text" (click)="showDialog()">{{item.description}}</p>
       <p class="price" (click)="showDialog()">{{item.price}} $</p>
 
-      <div class="icon" (click)="putLike()">
-      <div *ngIf="like; else star">
-         <i class="pi pi-star-o"> </i>
+      <div class="icon" (click)="putLike(item)">
+      <div *ngIf="item.checked; else star">
+         <i class="pi pi-star"> </i>
       </div>
         <ng-template #star>
-          <i class="pi pi-star"></i>
+          <i class="pi pi-star-o"></i>
         </ng-template>
       </div>
 

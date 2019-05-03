@@ -12,9 +12,40 @@
          [(ngModel)]="seachStr">
 
        <p-sidebar [(visible)]="display" position="right">
-         <app-basket></app-basket>
+         <app-basket (openConfirmDialog)="onOpenConfirmDialog()"></app-basket>
        </p-sidebar>
-       
+
+       <p-dialog header="Оформення замовлення" [(visible)]="displayer">
+         <form #myForm="mgForm" (ngSubmit)="onSubmit()"></form>
+         <div class="ui-g ui-fluid">
+           <div class="ui-g-12 ui-md-4">
+             <div class="ui-inputgroup">
+               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+               <input type="text" pInputText placeholder="Введіть ім'я">
+             </div>
+           </div>
+           <div class="ui-g-12 ui-md-4">
+             <div class="ui-inputgroup">
+               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+               <input type="text" pInputText placeholder="Введіть фамілію">
+             </div>
+           </div>
+           <div class="ui-g-12 ui-md-4">
+             <div class="ui-inputgroup">
+               <span class="ui-inputgroup-addon"><i class="fas fa-phone"></i></span>
+               <input type="text" pInputText placeholder="Введіть номер телефона">
+             </div>
+           </div>
+
+           <div class="ui-g-12 ui-md-4">
+             <div class="ui-inputgroup">
+               <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
+               <input type="text" pInputText placeholder="Email">
+             </div>
+           </div>
+         </div>
+       </p-dialog>
+
        <button class="card" type="text" (click)="showDialog()" pButton label="Корзина"></button>
               
      </div>

@@ -8,6 +8,7 @@ import {
 import { MenuItem } from 'primeng/api';
 import { HeaderServiceService } from './header-service.service';
 import { Categories } from '../shared/items.model';
+import {User} from '../shared/user-model';
 
 @Component({
   selector: 'app-header',
@@ -17,8 +18,16 @@ import { Categories } from '../shared/items.model';
 })
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
+  public user: User = {
+    firstName : 'Artur',
+    lastName : 'Ruschak',
+    email : 'ruschakartur@gmail.com' ,
+    phone : '+380502502463'
+  }
   @Output() public selectedCategory = new EventEmitter();
-  display: boolean = false;
+  display = false;
+  displayer = false;
+  val4: string;
   constructor(private headerService: HeaderServiceService) {}
 
   ngOnInit() {
@@ -49,4 +58,14 @@ export class HeaderComponent implements OnInit {
   showDialog() {
     this.display = true;
   }
+
+  onOpenConfirmDialog() {
+    this.display = false;
+    this.displayer = true;
+  }
+
+  public onSubmit(form) {
+    console.log(form.value);
+  }
 }
+

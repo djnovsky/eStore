@@ -10,6 +10,7 @@ import { HeaderServiceService } from './header-service.service';
 import { Categories } from '../shared/items.model';
 import {User} from '../shared/user-model';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,16 +20,19 @@ import {User} from '../shared/user-model';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   public user: User = {
-    firstName : 'Artur',
-    lastName : 'Ruschak',
-    email : 'ruschakartur@gmail.com' ,
-    phone : '+380502502463'
+    firstName: 'Artur',
+    lastName: 'Ruschak',
+    email: 'ruschakartur@gmail.com',
+    phone: '+380502502463'
   }
+
   @Output() public selectedCategory = new EventEmitter();
   display = false;
   displayer = false;
   val4: string;
-  constructor(private headerService: HeaderServiceService) {}
+
+  constructor(private headerService: HeaderServiceService) {
+  }
 
   ngOnInit() {
     this.getCategories();
@@ -55,6 +59,7 @@ export class HeaderComponent implements OnInit {
       };
     });
   }
+
   showDialog() {
     this.display = true;
   }
@@ -63,9 +68,12 @@ export class HeaderComponent implements OnInit {
     this.display = false;
     this.displayer = true;
   }
-
-  public onSubmit(form) {
+  register(form) {
     console.log(form.value);
+    this.headerService.register(form.value).subscribe((res) => {
+      console.log(res);
+    });
   }
+
 }
 

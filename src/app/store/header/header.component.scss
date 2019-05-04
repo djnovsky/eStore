@@ -113,17 +113,61 @@ body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
       
        
    }
-.ng-valid[required], .ng-valid.required {
-  border-left: 5px solid #42A948;
+.form{
+display:flex;
+ flex-direction: column;
 }
-.ng-invalid:not(form) {
-  border-left: 5px solid #a94442;
+.form-item {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 4px;
 }
 
-  
 
 
-   
+
+.form-submit label,
+.form-submit input[type="email"],
+.form-submit input[type="password"],
+.form-submit input[type="submit"] {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  color: #3A3F44;
+}
+
+.form-submit label {
+
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.form-submit input[type="email"], .form-submit input[type="password"] {
+  background-color: white;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.form-submit input[type="email"]:focus, .form-submit input[type="email"]:hover, .form-submit input[type="password"]:focus, .form-submit input[type="password"]:hover {
+  background-color: #eeeeee;
+}
+.form-submt {
+  background-color: green;
+  color: white;
+  text-transform: uppercase;
+  padding:20px 10px;
+  border-radius: 20px;
+  border:none;
+}
+.form-submit input[type="submit"]:focus, .form-submit input[type="submit"]:hover {
+  background-color: #120a2e;
+}
+.form-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
 
 
 

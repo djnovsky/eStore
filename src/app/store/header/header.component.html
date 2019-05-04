@@ -15,34 +15,33 @@
          <app-basket (openConfirmDialog)="onOpenConfirmDialog()"></app-basket>
        </p-sidebar>
 
-       <p-dialog header="Оформення замовлення" [(visible)]="displayer">
-         <form #myForm="mgForm" (ngSubmit)="onSubmit()"></form>
-         <div class="ui-g ui-fluid">
-           <div class="ui-g-12 ui-md-4">
-             <div class="ui-inputgroup">
-               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-               <input type="text" pInputText placeholder="Введіть ім'я">
-             </div>
-           </div>
-           <div class="ui-g-12 ui-md-4">
-             <div class="ui-inputgroup">
-               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-               <input type="text" pInputText placeholder="Введіть фамілію">
-             </div>
-           </div>
-           <div class="ui-g-12 ui-md-4">
-             <div class="ui-inputgroup">
-               <span class="ui-inputgroup-addon"><i class="fas fa-phone"></i></span>
-               <input type="text" pInputText placeholder="Введіть номер телефона">
-             </div>
-           </div>
+       <p-dialog header="Оформення замовлення" [(visible)]="displayer" resizable="false" draggable="false" modal="true">
+         <div class="register-item">
+           <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-submit">
 
-           <div class="ui-g-12 ui-md-4">
-             <div class="ui-inputgroup">
-               <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
-               <input type="text" pInputText placeholder="Email">
+             <div class="form-item ui-inputgroup">
+               <label class="user" for="register-firstName">Введіть ім'я</label>
+               <input name="firstName" id="register-firstName" type="text" placeholder="Ім'я" pInputText  ngModel required>
              </div>
-           </div>
+             <div class="form-item ui-inputgroup">
+               <label class="user" for="register-secondName">Введіть фамілію</label>
+               <input name="secondName" id="register-secondName" type="text"  placeholder="Фамілія" pInputText ngModel required>
+             </div>
+
+             <div class="ui-inputgroup form-item">
+               <label class="user" for="register-phone">Введіть номер телефона</label>
+               <input name="phone" id="register-phone" type="text"  placeholder="Номер телефона" pInputText ngModel required>
+
+             </div>
+
+             <div class="form-item ui-inputgroup">
+               <label class="user" for="register-email">Введіть email</label>
+               <input name="email" id="register-email" type="email" placeholder="Email" pInputText pKeyFilter="email" ngModel required>
+             </div>
+             <div class="form-item">
+               <button type="submit" class="form-submt" [disabled]="!myform.form.valid">Відправити замовлення</button>
+             </div>
+           </form>
          </div>
        </p-dialog>
 

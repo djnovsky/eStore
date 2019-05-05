@@ -37,7 +37,6 @@ export class BasketComponent implements OnInit {
   public total() {
     return this.items.reduce((total, item) => total + item.price, 0);
   }
-
   close() {
   this.openConfirmDialog.emit();
   }

@@ -19,13 +19,9 @@ import {User} from '../shared/user-model';
 })
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
-  public user: User = {
-    firstName: 'Artur',
-    lastName: 'Ruschak',
-    email: 'ruschakartur@gmail.com',
-    phone: '+380502502463'
-  }
-
+  public employee = {
+    email: ''
+  };
   @Output() public selectedCategory = new EventEmitter();
   display = false;
   displayer = false;
@@ -73,6 +69,8 @@ export class HeaderComponent implements OnInit {
     this.headerService.register(form.value).subscribe((res) => {
       console.log(res);
     });
+    this.displayer = false;
+    alert('Ваше замовлення відправлено')
   }
 
 }

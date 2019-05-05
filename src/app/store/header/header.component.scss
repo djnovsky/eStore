@@ -123,6 +123,7 @@ display:flex;
   flex-direction: column;
   text-align: center;
   margin-bottom: 4px;
+  margin:0 auto;
 }
 .form-submit label,
 .form-submit input[type="email"],
@@ -149,20 +150,18 @@ display:flex;
   border-radius: 20px;
   border:none;
   margin-top: 10px;
+  &:disabled {
+    background-color: grey;
+    color: white;
+    text-transform: uppercase;
+    padding:20px 10px;
+    border-radius: 20px;
+    border:none;
+    margin-top: 10px;
+  }
 }
-
-.form-submt:disabled {
-  background-color: grey;
-  color: white;
-  text-transform: uppercase;
-  padding:20px 10px;
-  border-radius: 20px;
-  border:none;
-  margin-top: 10px;
+.help-block {
+  color:red;
+  font-size: 14px;
+  margin-top: 7px;
 }
-
-
-
-
-  
-      

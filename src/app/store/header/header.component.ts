@@ -68,10 +68,13 @@ export class HeaderComponent implements OnInit {
     console.log(form.value);
     this.headerService.register(form.value).subscribe((res) => {
       console.log(res);
-    });
+      alert('Замовлення відправлено');
+    }, (error) => {
+        console.log(error);
+        alert('Вибачте, помилка у відправленні' + error.statusText);
+      }
+    );
     this.displayer = false;
-    alert('Ваше замовлення відправлено')
   }
-
 }
 

@@ -11,24 +11,24 @@ import { ShopItemModel } from '../../shared/shop-item.model';
 })
 export class BasketComponent implements OnInit {
   itemsBasket:any = [];
-  item: any = {};
-  items: ShopItemModel[];
+
+
+  public items: ShopItemModel[] = [];
+
 
 
   constructor(private shopItemService: ShopItemService) {
   }
 
   ngOnInit() {
-   this.showItemWithBasket()
-    console.log(this.items)
-
+    this.showItemWithBasket()
 
 
 
   }
 
   public total() {
-    return this.itemsBasket.reduce((total, item) => total + item.price, 0);
+    return this.items.reduce((total, item) => total + item.price, 0);
 
   }
 
@@ -37,10 +37,14 @@ export class BasketComponent implements OnInit {
 
 
   public showItemWithBasket() {
-    const ids = JSON.parse(window.localStorage.getItem('ids')).toString();
-    this.shopItemService.getItemsIdWithBasket(ids).subscribe((resp: Items) => (this.items = resp.items));
+    // const ids =  JSON.parse(window.localStorage.getItem('ids')).toString();
+    //
+    // return this.shopItemService.getItemsIdWithBasket(ids).subscribe((resp: Items) => (this.items = resp.items));
 
 
+    const ids = window.localStorage.getItem('ids') ? JSON.parse(window.localStorage.getItem('ids')): toString() ;
+    this.shopItemService.getItemsIdWithBasket(ids).subscribe((resp: Items) => (this.items = resp.items))
+    console.log(ids)
   }
 
 }

@@ -58,7 +58,7 @@ export class CardComponent implements OnInit {
     //console.log(shopItem);
   }
 
-  save(itemId?:any){
+  save(itemId:any){
     this.localStoragMath.push(itemId._id)
     window.localStorage.setItem('ids', JSON.stringify(this.localStoragMath))
     console.log(itemId);

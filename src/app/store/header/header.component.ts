@@ -3,6 +3,7 @@ import {
   EventEmitter,
   OnInit,
   Output,
+  Input,
   ViewEncapsulation,
 } from '@angular/core';
 import { MenuItem } from 'primeng/api';
@@ -20,6 +21,7 @@ import { ShopItemService } from './../shared/shop-item.service';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   @Output() public selectedCategory = new EventEmitter();
+
   display: boolean = false;
   constructor(private headerService: HeaderServiceService,
               private shopItemService: ShopItemService) {}
@@ -51,6 +53,7 @@ export class HeaderComponent implements OnInit {
   }
   showBasket() {
     this.display = true;
+
 
 
   }

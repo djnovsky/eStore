@@ -45,6 +45,6 @@ export class ShopItemService {
     return this.http.get(this.apiUrl + '/items', {
       params: new HttpParams().set('itemIds', itemIds),
     });
-    console.log('ff');
+
   }
 }

@@ -1,0 +1,50 @@
+footer {
+   display: flex;
+   
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+   background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
+   background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+}
+
+.aboutAs {
+   width: 33%;
+   align-items: center;
+}
+
+.contacts {
+  width: 33%;
+  
+}
+
+.rights {
+   width: 33%;
+   text-align: center;
+}
+.aboutAs a{
+   color: #fff; 
+}
+
+.contacts a{
+   color: #fff;
+}
+
+.rights a{
+   color: #fff;
+}
+.aboutAs a:hover{
+   color: #007ad9;
+}
+
+.contacts a:hover{
+   color: #007ad9;
+   
+}
+
+.rights a:hover{
+   color: #fff;
+}
+footer li {
+   color: #fff;
+}

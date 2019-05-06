@@ -1,0 +1,127 @@
+// Хедер
+.ui-menubar .ui-submenu-list .ui-menuitem-link .ui-submenu-icon{
+   display: none;
+}
+.ui-submenu-icon.pi.pi-fw.pi-caret-down::before{
+   display: none;
+}
+.ui-g {
+ justify-content: center;  
+}
+.ui-menuitem-text{
+  
+   font-weight: 500;
+   font-size: 16px;
+   letter-spacing: 1px;
+}
+.ui-menubar:after {
+   content: "";
+   clear: none;
+   
+}
+body .ui-corner-all {
+   border-radius: 0;
+}
+
+ul {
+   
+   align-content: center;
+}
+
+
+
+body {
+   margin: 0;
+   font-family: "Open Sans", "Helvetica Neue", sans-serif;
+   }
+body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
+      color: #fff;
+   }   
+
+
+   .header{
+     background-color: #fff;
+      .header_up{
+         background-color: #fff;
+         
+         .header_up_left{
+           
+            img{
+              height: 86px;
+              width: 100%;
+            }
+         }
+         .header_up_right {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            .ui-button{
+              padding: 0;
+              margin-right: 15px;
+
+            }
+            .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only{
+               background-color: #304453;
+               border-color:  #304453;
+               :hover{
+                  background-color: #304453;
+                  border-color:  #304453;
+               }
+            }
+            input{
+               width: 300px;
+               border: 1px solid #cccccc;
+               border-radius: 3px;
+               background: #ffffff !important;
+               outline: none; 
+               color: #333333;
+               font-size: 15px;
+               font-family: Tahoma;
+               
+            }
+            .card {
+               margin-left: 15px;
+            }
+         }
+         
+      }
+      p-menubar{
+         .ui-menubar {
+            background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
+            background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+            padding: 13px;
+            border: none;
+       
+ 
+            p-menubarsub {
+               .ui-menubar-root-list{
+                 
+                  display: flex;
+                  justify-content: center;
+                  .ui-menuitem{
+                     border:none;
+                  }
+                  
+               }
+            
+            }    
+         }
+       }
+      
+         
+      
+       
+   }
+   
+
+  
+
+
+   
+
+
+
+  
+      
+        

@@ -1,0 +1,26 @@
+<div class="header">
+   <div class="header_up">
+     <div class="header_up_left">
+       
+       <img src="../../assets/img/brandstv.jpg" alt="fgd">
+     </div>
+     <div class="header_up_right">
+      
+         <button pButton type="button" label="Пошук"></button>
+         <input type="text" pInputText 
+         placeholder="введіть назву товару" 
+         [(ngModel)]="seachStr">
+
+       <p-sidebar [(visible)]="display" position="right">
+         <app-basket></app-basket>
+       </p-sidebar>
+       
+       <button class="card" type="text" (click)="showBasket()" pButton label="Корзина"></button>
+              
+     </div>
+  
+   <p-menubar [model]="items" >
+     </p-menubar>
+
+ </div>
+ </div>

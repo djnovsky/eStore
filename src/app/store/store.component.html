@@ -1,0 +1,37 @@
+
+<app-header (selectedCategory)="onCategorySelected($event)"></app-header>
+<div class="container">
+   <div class="menu_left">
+      <div class="menu_left_fixed">
+         <div class="menu_left_phone">
+            <ul>
+               <li>Samsung</li>
+               <li>iphone</li>
+          
+            </ul>
+         </div>
+     
+         <div class="menu_left_watch">
+            <ul>
+               <li>Man</li>
+               <li>Woman</li>
+              
+            </ul>
+         </div>
+         <div class="menu_left_headphone">
+            <ul>
+               <li>headphone</li>
+               <li>headphone</li>
+                 
+            </ul>
+         </div>
+      </div>     
+   </div>
+   <div class="content_right">
+         <app-card [selectedCategory]="selectedCategory"></app-card>
+   </div>
+  
+   
+</div>
+
+

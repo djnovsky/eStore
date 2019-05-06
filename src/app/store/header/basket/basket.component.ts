@@ -24,7 +24,6 @@ export class BasketComponent implements OnInit {
     this.showItemWithBasket()
 
 
-
   }
 
   public total() {

@@ -1,5 +1,4 @@
 <p>У вашій корзині {{items.length}} товарів </p>
-
 <hr>
 <div class="p-grid" *ngFor="let item of items">
   <div class="p-col-4"><img src="../../../../assets/kisspng-samsung-galaxy-j7.jpg" alt="" width="80" height="70"></div>
@@ -8,12 +7,11 @@
     <p class="category">{{item.category}}</p>
     <p class="subcategory">{{item.subcategory}}</p>
     <p class="price">{{item.price}} $</p>
-    <button class="baskt-btn" (click)="delBasket()">Видалити з корзини</button>
+    <button class="baskt-btn">Видалити з корзини</button>
   </div>
-
 </div>
 <p>Загальна ціна : {{total() | currency:'USD':'$'}}</p>
 <hr>
-<button pButton type="button" label="Оформити замовлення" class="ui-button-success"></button>
+<button pButton type="button" label="Оформити замовлення" class="ui-button-success" (click)="close()"></button>
 
 

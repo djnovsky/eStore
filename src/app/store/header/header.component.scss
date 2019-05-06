@@ -113,15 +113,55 @@ body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
       
        
    }
-   
-
-  
-
-
-   
-
-
-
-  
-      
-        
+   // Dialog send user form
+.form{
+display:flex;
+ flex-direction: column;
+}
+.form-item {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 4px;
+  margin:0 auto;
+}
+.form-submit label,
+.form-submit input[type="email"],
+.form-submit input[type="password"],
+.form-submit input[type="submit"] {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  color: #3A3F44;
+}
+.form-submit label {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.form-submit input[type="email"], .form-submit input[type="password"] {
+  background-color: white;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.form-submt {
+  background-color: green;
+  color: white;
+  text-transform: uppercase;
+  padding:20px 10px;
+  border-radius: 20px;
+  border:none;
+  margin-top: 10px;
+  &:disabled {
+    background-color: grey;
+    color: white;
+    text-transform: uppercase;
+    padding:20px 10px;
+    border-radius: 20px;
+    border:none;
+    margin-top: 10px;
+  }
+}
+.help-block {
+  color:red;
+  font-size: 14px;
+  margin-top: 7px;
+}

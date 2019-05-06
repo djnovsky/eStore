@@ -12,9 +12,41 @@
          [(ngModel)]="seachStr">
 
        <p-sidebar [(visible)]="display" position="right">
-         <app-basket></app-basket>
+         <app-basket (openConfirmDialog)="onOpenConfirmDialog()"></app-basket>
        </p-sidebar>
-       
+
+       <p-dialog header="Оформення замовлення" [(visible)]="displayer" resizable="false" draggable="false" modal="true" [minWidth]="500">
+         <div class="register-item">
+           <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-submit">
+             <div class="form-item ui-inputgroup " [class.has-error]="firstName.invalid && firstName.touched" [class.has-success]="firstName.valid">
+               <label class="user" for="firstName" class="custom-control-label">Введіть ім'я</label>
+               <input name="firstName" id="firstName"  type="text" placeholder="Ім'я" #firstName="ngModel" pInputText ngModel required>
+               <span class="help-block" *ngIf="firstName.invalid && firstName.touched">Поле <b>імя</b> обовязкове для заповлення</span>
+             </div>
+             <div class="form-item ui-inputgroup">
+               <label class="user" for="secondName">Введіть фамілію</label>
+               <input name="secondName" id="secondName" type="text" #secondName="ngModel" placeholder="Фамілія" pInputText ngModel required>
+               <span class="help-block" *ngIf="secondName.invalid && secondName.touched">Поле <b>фамілія</b> обовязкове для заповлення</span>
+             </div>
+             <div class="ui-inputgroup form-item">
+               <label class="user" for="register-phone">Введіть номер телефона</label>
+               <input name="phone" id="register-phone" type="text"  #phone="ngModel" placeholder="Номер телефона" pInputText ngModel required phone="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}" pKeyFilter="int">
+               <span class="help-block" *ngIf="phone.errors?.required && phone.touched">Поле <b>номер телефона</b> обовязкове для заповнення</span>
+               <span class="help-block" *ngIf="phone.errors?.phone && phone.touched">Поле <b>номер телефона</b> введене некоректно </span>
+             </div>
+             <div class="form-item ui-inputgroup" [class.has-error]="email.invalid && email.touched" [class.has-success]="email.valid">
+               <label class="user" for="register-email" class="custom-control-label">Введіть email</label>
+               <input name="email"  id="register-email" email type="email" #email="ngModel" placeholder="Email" pInputText pKeyFilter="email" ngModel required >
+               <span class="help-block" *ngIf="email.errors?.required && email.touched">Поле <b>email</b> обовязкове для заповнення</span>
+               <span class="help-block" *ngIf="email.errors?.email && email.touched">Поле <b>email</b> введене некоректно </span>
+             </div>
+             <div class="form-item">
+               <button type="submit" class="form-submt" [disabled]="!myform.form.valid">Відправити замовлення</button>
+             </div>
+           </form>
+         </div>
+       </p-dialog>
+
        <button class="card" type="text" (click)="showDialog()" pButton label="Корзина"></button>
               
      </div>

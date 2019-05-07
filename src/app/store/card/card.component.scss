@@ -85,15 +85,16 @@ list-style: none;
 .icon {
 
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: red;
-  font-size: 2em;
+  top: 7px;
+  right: 7px;
+  color: #ffba00;
+  font-size: 1.2em;
 
 
 
 }
 
-.pagitanor{
-   align-items: center;
+.pagination{
+  display: block;
+  width: 100%;
 }

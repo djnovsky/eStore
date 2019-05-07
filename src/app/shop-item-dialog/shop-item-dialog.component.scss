@@ -14,12 +14,14 @@
 }
 
 .dialog-img {
-  max-height: 350px;
-  width:auto;
+  height: 100%;
+  width: 30%;
 }
 
 .d-img-section {
   padding: 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .d-price {
@@ -29,3 +31,4 @@
   font-size: 1.3em;
   padding: 15px 0 15px 0;
 }
+

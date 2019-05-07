@@ -9,6 +9,7 @@ import { MenuItem } from 'primeng/api';
 import { HeaderServiceService } from './header-service.service';
 import { Categories } from '../shared/items.model';
 import {User} from '../shared/user-model';
+import { ShopItemService } from './../shared/shop-item.service';
 
 
 @Component({
@@ -23,12 +24,12 @@ export class HeaderComponent implements OnInit {
     email: ''
   };
   @Output() public selectedCategory = new EventEmitter();
-  display = false;
+  display: boolean = false;
   displayer = false;
   val4: string;
 
-  constructor(private headerService: HeaderServiceService) {
-  }
+  constructor(private headerService: HeaderServiceService,
+              private shopItemService: ShopItemService) {}
 
   ngOnInit() {
     this.getCategories();
@@ -76,5 +77,11 @@ export class HeaderComponent implements OnInit {
     );
     this.displayer = false;
   }
-}
 
+  showBasket() {
+    this.display = true;
+
+
+
+  }
+}

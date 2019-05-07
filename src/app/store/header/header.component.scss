@@ -6,10 +6,10 @@
    display: none;
 }
 .ui-g {
- justify-content: center;  
+ justify-content: center;
 }
 .ui-menuitem-text{
-  
+
    font-weight: 500;
    font-size: 16px;
    letter-spacing: 1px;
@@ -17,14 +17,14 @@
 .ui-menubar:after {
    content: "";
    clear: none;
-   
+
 }
 body .ui-corner-all {
    border-radius: 0;
 }
 
 ul {
-   
+
    align-content: center;
 }
 
@@ -36,16 +36,16 @@ body {
    }
 body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
       color: #fff;
-   }   
+   }
 
 
    .header{
      background-color: #fff;
       .header_up{
          background-color: #fff;
-         
+
          .header_up_left{
-           
+
             img{
               height: 86px;
               width: 100%;
@@ -74,17 +74,17 @@ body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
                border: 1px solid #cccccc;
                border-radius: 3px;
                background: #ffffff !important;
-               outline: none; 
+               outline: none;
                color: #333333;
                font-size: 15px;
                font-family: Tahoma;
-               
+
             }
             .card {
                margin-left: 15px;
             }
          }
-         
+
       }
       p-menubar{
          .ui-menubar {
@@ -92,26 +92,26 @@ body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
             background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
             padding: 13px;
             border: none;
-       
- 
+
+
             p-menubarsub {
                .ui-menubar-root-list{
-                 
+
                   display: flex;
                   justify-content: center;
                   .ui-menuitem{
                      border:none;
                   }
-                  
+
                }
-            
-            }    
+
+            }
          }
        }
-      
-         
-      
-       
+
+
+
+
    }
    // Dialog send user form
 .form{

@@ -32,10 +32,11 @@ export class CardComponent implements OnInit {
   cardItem: any = [];
   item: any = {};
   items: ShopItemModel[];
-  //selectedValue: string = 'red';
+  localStoragMath = [];
   public visible: boolean = false;
   public selectedShopItem: ShopItemModel;
   pageCount: number;
+
 
   constructor(private shopItemsService: ShopItemService) {}
 
@@ -57,10 +58,10 @@ export class CardComponent implements OnInit {
     //console.log(shopItem);
   }
 
-  save() {
-    alert('Товар добавленний в корзину');
-    this.cardItem.push(this.item);
-    console.log(this.cardItem);
+  save(itemId:any){
+    this.localStoragMath.push(itemId._id)
+    window.localStorage.setItem('ids', JSON.stringify(this.localStoragMath))
+    console.log(itemId);
   }
 
   getShopItemsByCategory(category, pageNumber?) {

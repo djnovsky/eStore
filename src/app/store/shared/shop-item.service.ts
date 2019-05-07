@@ -40,4 +40,11 @@ export class ShopItemService {
       params: queryParams,
     });
   }
+
+  public getItemsIdWithBasket(itemIds?) {
+    return this.http.get(this.apiUrl + '/items', {
+      params: new HttpParams().set('itemIds', itemIds),
+    });
+
+  }
 }

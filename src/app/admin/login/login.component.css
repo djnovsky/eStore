@@ -36,3 +36,6 @@ font-size: 15px;
 background-color: rgb(15, 94, 94);
 color:#fff;
 }
+.ui-chkbox-label {
+  text-decoration-color: #007ad9!important;
+}

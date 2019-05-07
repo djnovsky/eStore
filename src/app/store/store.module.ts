@@ -13,6 +13,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { BasketComponent } from './header/basket/basket.component';
 import { TableModule } from 'primeng/table';
 import { DataViewModule } from 'primeng/dataview';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DataViewModule } from 'primeng/dataview';
     TableModule,
     PanelModule,
     DataViewModule,
+    CheckboxModule,
   ],
   exports: [StoreComponent],
 })

@@ -39,4 +39,18 @@ describe('Card component', () => {
       expect(shopItemService.getPaginator).toHaveBeenCalledWith(1, 10, undefined);
     });
   });
+
+  describe('getPaginateShopItems', () => {
+    it('should call getPaginatorShopItems with params', function() => {
+      //arrange
+
+      const expectedParams = [pageNumber, category];
+
+      //act
+
+      component.
+      //assert
+      expect(shopItemService.getPaginator).toHaveBeenCalled()
+    });
+  }
 });

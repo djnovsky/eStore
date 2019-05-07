@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MenubarModule
   ],
   providers: [],
   exports: [],

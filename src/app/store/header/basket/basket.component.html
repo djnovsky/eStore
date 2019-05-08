@@ -1,12 +1,12 @@
 <p>У вашій корзині {{items.length}} товарів </p>
 <hr>
-<div class="p-grid" *ngFor="let item of items">
+<div class="p-grid" *ngFor="let items of items">
   <div class="p-col-4"><img src="../../../../assets/kisspng-samsung-galaxy-j7.jpg" alt="" width="80" height="70"></div>
   <div class="p-col-7 p-offset-1">
-    <p class="title"><b>{{item.title}}</b></p>
-    <p class="category">{{item.category}}</p>
-    <p class="subcategory">{{item.subcategory}}</p>
-    <p class="price">{{item.price}} $</p>
+    <p class="title"><b>{{items.title}}</b></p>
+    <p class="category">{{items.category}}</p>
+    
+    <p class="price">{{items.price}} $</p>
     <button class="baskt-btn">Видалити з корзини</button>
   </div>
 </div>

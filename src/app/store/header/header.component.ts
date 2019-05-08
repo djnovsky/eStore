@@ -4,11 +4,13 @@ import {
   OnInit,
   Output,
   ViewEncapsulation,
+  ViewChild
 } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { HeaderServiceService } from './header-service.service';
 import { Categories } from '../shared/items.model';
 import {User} from '../shared/user-model';
+import { BasketComponent } from './basket/basket.component';
 
 
 @Component({
@@ -18,6 +20,7 @@ import {User} from '../shared/user-model';
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild(BasketComponent) BasketComponent: BasketComponent
   items: MenuItem[];
   public employee = {
     email: ''
@@ -55,9 +58,10 @@ export class HeaderComponent implements OnInit {
       };
     });
   }
-
+// метод => відкриває корзину з вибраними елементими items з корзини
   showDialog() {
     this.display = true;
+    this.BasketComponent.showItemWithBasket()
   }
 
   onOpenConfirmDialog() {

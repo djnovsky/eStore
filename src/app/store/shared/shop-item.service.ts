@@ -40,4 +40,12 @@ export class ShopItemService {
       params: queryParams,
     });
   }
+
+  //запрос на вибрані items на сервер
+  public getItemsIdWithBasket(itemIds?) {
+    return this.http.get(this.apiUrl + '/items', {
+      params: new HttpParams().set('itemIds', itemIds),
+    });
+
+  }
 }

@@ -3,14 +3,15 @@
    <div class="menu_left">
      <div class="sorted-container">
 
-     <p-checkbox name="groupname" value="val1" label="Lowest Price" [(ngModel)]="selectedValues"></p-checkbox>
-     <p-checkbox name="groupname" value="val2" label="Highest Price" [(ngModel)]="selectedValues"></p-checkbox>
+     <p-checkbox [(ngModel)]="lowestPrice" binary="true"   name="groupname" value="val1" label="Lowest Price" (onChange)="sortFromLowest($event)"></p-checkbox><br>
+     <p-checkbox [(ngModel)]="highesPrice"  binary="true" name="groupname" value="val2" label="Highest Price" (onChange)="sortFromHighest($event)"></p-checkbox>
 
      </div>
 
    </div>
    <div class="content_right">
-         <app-card [selectedCategory]="selectedCategory"></app-card>
+         <app-card [selectedCategory]="selectedCategory" [sortByLowest]="lowestPrice" [sortByHighest]="highesPrice"></app-card>
+
    </div>
   
    

@@ -47,5 +47,6 @@ export class ShopItemService {
       params: new HttpParams().set('itemIds', itemIds),
     });
 
+    
   }
 }

@@ -5,9 +5,9 @@
   <div class="p-col-7 p-offset-1">
     <p class="title"><b>{{item.title}}</b></p>
     <p class="category">{{item.category}}</p>
-    <p class="subcategory">{{item.subcategory}}</p>
+    
     <p class="price">{{item.price}} $</p>
-    <button class="baskt-btn">Видалити з корзини</button>
+    <button class="baskt-btn" (click)="dellItem(item)">Видалити з корзини</button>
   </div>
 </div>
 <p>Загальна ціна : {{total() | currency:'USD':'$'}}</p>

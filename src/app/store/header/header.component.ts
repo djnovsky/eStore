@@ -4,12 +4,13 @@ import {
   OnInit,
   Output,
   ViewEncapsulation,
+  ViewChild,
 } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { HeaderServiceService } from './header-service.service';
 import { Categories } from '../shared/items.model';
-import {User} from '../shared/user-model';
-
+import { User } from '../shared/user-model';
+import { BasketComponent } from './basket/basket.component';
 
 @Component({
   selector: 'app-header',
@@ -18,17 +19,17 @@ import {User} from '../shared/user-model';
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild(BasketComponent) BasketComponent: BasketComponent;
   items: MenuItem[];
   public employee = {
-    email: ''
+    email: '',
   };
   @Output() public selectedCategory = new EventEmitter();
   display = false;
   displayer = false;
   val4: string;
 
-  constructor(private headerService: HeaderServiceService) {
-  }
+  constructor(private headerService: HeaderServiceService) {}
 
   ngOnInit() {
     this.getCategories();
@@ -55,9 +56,10 @@ export class HeaderComponent implements OnInit {
       };
     });
   }
-
+  // метод => відкриває корзину з вибраними елементими items з корзини
   showDialog() {
     this.display = true;
+    this.BasketComponent.showItemWithBasket();
   }
 
   onOpenConfirmDialog() {
@@ -66,10 +68,12 @@ export class HeaderComponent implements OnInit {
   }
   register(form) {
     console.log(form.value);
-    this.headerService.register(form.value).subscribe((res) => {
-      console.log(res);
-      alert('Замовлення відправлено');
-    }, (error) => {
+    this.headerService.register(form.value).subscribe(
+      res => {
+        console.log(res);
+        alert('Замовлення відправлено');
+      },
+      error => {
         console.log(error);
         alert('Вибачте, помилка у відправленні' + error.statusText);
       }
@@ -77,4 +81,3 @@ export class HeaderComponent implements OnInit {
     this.displayer = false;
   }
 }
-

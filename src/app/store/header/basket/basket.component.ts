@@ -1,5 +1,13 @@
-import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
-
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { Items } from '../../shared/items.model';
+import { ShopItemModel } from '../../shared/shop-item.model';
+import { ShopItemService } from '../../shared/shop-item.service';
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
@@ -8,37 +16,48 @@ import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angul
 })
 export class BasketComponent implements OnInit {
   @Output() openConfirmDialog = new EventEmitter<boolean>();
-  public items = [
-    {title: 'Potato', category: 'Eat', subcategory: 'vegetables', price: 500},
-    {
-      title: 'Milk',
-      category: 'Eat',
-      subcategory: 'dairy products',
-      price: 300,
-    },
-    {
-      title: 'Cheese',
-      category: 'Eat',
-      subcategory: 'dairy products',
-      price: 200,
-    },
-    {title: 'iphone', category: 'Phones', subcategory: 'IOS', price: 100},
-    {
-      title: 'Samsung',
-      category: 'Phones',
-      subcategory: 'Android',
-      price: 700,
-    },
-    {title: 'Gread', category: 'Other', subcategory: 'Soneone', price: 800},
-    {title: 'fdsk', category: 'Other', subcategory: 'Somesecond', price: 550},
-  ];
-  constructor() {}
-  ngOnInit() {}
+  public items: ShopItemModel[] = [];
+  item = {};
+
+  constructor(private shopItemService: ShopItemService) {}
+
+  ngOnInit() {
+    this.showItemWithBasket();
+  }
   public total() {
     return this.items.reduce((total, item) => total + item.price, 0);
   }
   close() {
-  this.openConfirmDialog.emit();
+    this.openConfirmDialog.emit();
+  }
+
+  //метод  => виводить в корзину
+  public showItemWithBasket() {
+    const ids = window.localStorage.getItem('ids')
+      ? JSON.parse(window.localStorage.getItem('ids'))
+      : toString();
+    this.shopItemService
+      .getItemsIdWithBasket(ids)
+      .subscribe((resp: Items) => (this.items = resp.items));
+  }
+
+  //видаляє всі товари з корзини
+  dellItem(itemId: any) {
+    let delItem = window.localStorage.getItem('ids')
+      ? JSON.parse(window.localStorage.getItem('ids'))
+      : toString();
+    // console.log(delItem)
+    for (let i = 0; i < delItem.length; i++) {
+      if (delItem[i] === itemId._id) {
+        delItem.splice(i, 1);
+        i--;
+      }
+    }
+    window.localStorage.setItem('ids', JSON.stringify(delItem));
+    if (delItem.length) {
+      this.showItemWithBasket();
+    } else {
+      this.items = [];
+    }
   }
 }
-

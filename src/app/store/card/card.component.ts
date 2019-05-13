@@ -32,12 +32,11 @@ export class CardComponent implements OnInit {
   cardItem: any = [];
   item: any = {};
   items: ShopItemModel[];
-  localStoragMath =window.localStorage.getItem('ids')
-      ? JSON.parse(window.localStorage.getItem('ids'))
-      : []
+  localStoragMath = window.localStorage.getItem('ids')
+    ? JSON.parse(window.localStorage.getItem('ids'))
+    : [];
   disable = true;
- 
-  
+
   //selectedValue: string = 'red';
   public visible: boolean = false;
 
@@ -52,8 +51,6 @@ export class CardComponent implements OnInit {
     this.shopItemsService.getItemsLength().subscribe((resp: Items) => {
       this.pageCount = resp.items.length;
     });
-    
-    
   }
   putLike(card: any) {
     card.checked = !card.checked;
@@ -67,23 +64,16 @@ export class CardComponent implements OnInit {
   }
 
   //метод => записує id вибраних items в localStoragMath
-  save(itemId:any){
-
+  save(itemId: any) {
     // ховає кнопку при добавленні в корзину
-   itemId.InBasket = true;
-   console.log(itemId)
+    itemId.InBasket = true;
+    console.log(itemId);
 
-  //добавлення в корзину   
-  
-  this.localStoragMath.push(itemId._id)
-   window.localStorage.setItem('ids',JSON.stringify( this.localStoragMath))
+    //добавлення в корзину
 
+    this.localStoragMath.push(itemId._id);
+    window.localStorage.setItem('ids', JSON.stringify(this.localStoragMath));
   }
-
-  
- 
-   
-
 
   getShopItemsByCategory(category, pageNumber?) {
     this.getPaginatedShopItems(pageNumber, category);

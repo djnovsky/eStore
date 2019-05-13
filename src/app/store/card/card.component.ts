@@ -32,7 +32,9 @@ export class CardComponent implements OnInit {
   cardItem: any = [];
   item: any = {};
   items: ShopItemModel[];
-  localStoragMath:any = [];
+  localStoragMath =window.localStorage.getItem('ids')
+      ? JSON.parse(window.localStorage.getItem('ids'))
+      : []
   disable = true;
  
   

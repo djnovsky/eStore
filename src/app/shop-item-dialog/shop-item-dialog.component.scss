@@ -14,12 +14,19 @@
 }
 
 .dialog-img {
+  height: 100%;
   max-height: 350px;
   width:auto;
+  
+
 }
 
 .d-img-section {
   padding: 3%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .d-price {

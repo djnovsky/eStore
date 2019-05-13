@@ -5,16 +5,18 @@ app-card{
    flex-wrap: nowrap;
    align-items: flex-start;
    flex-wrap: wrap;
-
+   justify-content: space-between;
+   
 
    .card{
-      width: 18%;
+      width: 22%;
       text-align: center;
+      max-height: 206px;
       height: 100%;
       // border: 1px solid #eee;
       // border-radius: 3px;
       padding: 0;
-      margin: 0.7em 0.7em 0 0;
+      margin: 0 1em 1em 0;
       box-shadow: 0 0 5px rgba(207, 207, 207, 0.5);
 
 
@@ -28,7 +30,7 @@ app-card{
 
          img{
             cursor: pointer;
-            width: 133px;
+            // width: 133px;
             height: 130px;
          }
          .text{
@@ -36,6 +38,10 @@ app-card{
             margin: 5px 5px;
             font-size: 13px;
             color: black;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            white-space: nowrap;
 
          }
          .price{
@@ -83,22 +89,58 @@ list-style: none;
 
 }
 .icon {
-
+  
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: red;
-  font-size: 2em;
-
-
-
+  top: 0.3em;
+  right: 0.4em;
+  color: #ffb700a1;
+  font-size: 1.4em;
+  cursor: pointer;
 }
 
-.pagitanor{
-   align-items: center;
+.pagination{
+   margin-top: 10px;
+   width: 100%;
 }
 
 
-segoePrintFont {
-   display: none;
-}
+
+
+
+
+
+
+
+ @media screen and (max-width: 800px) {
+   
+   app-card{
+      .card {
+         width: 29%;
+         margin: 0 1em 1em 0;
+	   }
+   }
+ }
+
+
+ @media screen and (max-width: 700px) {
+   
+   app-card{
+      .card {
+         width: 44%;
+         margin: 0 1em 1em 0;
+	   }
+   }
+ }
+
+ @media screen and (max-width: 480px) {
+   
+   app-card{
+      
+      justify-content: center;
+      .card {
+        width: 80%;
+         margin: 0 1em 1em 0;
+	   }
+   }
+ }
+

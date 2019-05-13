@@ -18,6 +18,17 @@ export class CardComponent implements OnInit {
     this._selectedCategory = category;
   }
 
+  @Input() public set sortByLowest(value: boolean) {
+    if (value) {
+      this.items.sort((n1, n2) => n1.price - n2.price);
+    }
+  }
+
+  @Input() public set sortByHighest(value: boolean) {
+    if (value) {
+      this.items.sort((n1, n2) => n2.price - n1.price);
+    }
+  }
   public get selectedCategory() {
     return this._selectedCategory;
   }

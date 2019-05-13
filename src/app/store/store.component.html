@@ -1,37 +1,20 @@
-
-<app-header (selectedCategory)="onCategorySelected($event)"></app-header>
+<app-header (selectedCategory)="onCategorySelected($event)" xmlns="http://www.w3.org/1999/html"></app-header>
 <div class="container">
    <div class="menu_left">
-      <div class="menu_left_fixed">
-         <div class="menu_left_phone">
-            <ul>
-               <li>Samsung</li>
-               <li>iphone</li>
-          
-            </ul>
-         </div>
-     
-         <div class="menu_left_watch">
-            <ul>
-               <li>Man</li>
-               <li>Woman</li>
-              
-            </ul>
-         </div>
-         <div class="menu_left_headphone">
-            <ul>
-               <li>headphone</li>
-               <li>headphone</li>
-                 
-            </ul>
-         </div>
-      </div>     
+     <div class="sorted-container">
+
+     <p-checkbox [(ngModel)]="lowestPrice" binary="true"   name="groupname" value="val1" label="Lowest Price" (onChange)="sortFromLowest($event)"></p-checkbox><br>
+     <p-checkbox [(ngModel)]="highesPrice"  binary="true" name="groupname" value="val2" label="Highest Price" (onChange)="sortFromHighest($event)"></p-checkbox>
+
+     </div>
+
    </div>
    <div class="content_right">
-         <app-card [selectedCategory]="selectedCategory"></app-card>
+         <app-card [selectedCategory]="selectedCategory" [sortByLowest]="lowestPrice" [sortByHighest]="highesPrice"></app-card>
+
    </div>
-  
-   
+
+
 </div>
 
 

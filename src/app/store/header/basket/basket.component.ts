@@ -5,6 +5,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+
 import { Items } from '../../shared/items.model';
 import { ShopItemModel } from '../../shared/shop-item.model';
 import { ShopItemService } from '../../shared/shop-item.service';

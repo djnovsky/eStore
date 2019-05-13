@@ -24,6 +24,7 @@ import { DataViewModule } from 'primeng/dataview';
 import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
 import { ShopItemDialogComponent } from '../shop-item-dialog/shop-item-dialog.component';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ShopItemDialogComponent } from '../shop-item-dialog/shop-item-dialog.co
     InputMaskModule,
     InputTextModule,
     MessageModule,
+    CheckboxModule,
   ],
   exports: [StoreComponent],
 })

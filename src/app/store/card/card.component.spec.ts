@@ -106,4 +106,19 @@ describe('Card component', () => {
       );
     });
   });
+
+  describe('getPaginateShopItems', () => {
+    it('should call getPaginatorShopItems with params', () => {
+      //arrange
+
+      const expectedParams = [pageNumber, category];
+
+      //act
+
+      component
+        //assert
+        .expect(shopItemService.getPaginator)
+        .toHaveBeenCalled();
+    });
+  });
 });

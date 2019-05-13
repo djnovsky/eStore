@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild(BasketComponent) BasketComponent: BasketComponent;
   items: MenuItem[];
   public employee = {
-    email: '',
+    email: ''
   };
   @Output() public selectedCategory = new EventEmitter();
   display = false;
@@ -81,3 +81,4 @@ export class HeaderComponent implements OnInit {
     this.displayer = false;
   }
 }
+

@@ -3,7 +3,7 @@
     <li *ngIf="items">
       <div  (click)="showDialog(item)">
         <img src="../../../assets/img/samsung15png.png" alt="">
-        <p class="text">{{item.description}}</p>
+        <p class="text">{{item.title}}</p>
         <p class="price">{{item.price}} $</p>
       </div>
       <div class="icon" (click)="putLike(item)">
@@ -37,7 +37,7 @@
   <p-dialog header="" [(visible)]="display" [transitionOptions]="'400ms'">
     <div>
       <li *ngIf="items">
-          <img src="../../../assets/img/samsung15png.png" alt="">
+          <img class="img_dialog" src="../../../assets/img/samsung15png.png" alt="" >
           <p class="text">{{item.description}}</p>
           <p class="price">{{item.price}} $</p>
       </li>

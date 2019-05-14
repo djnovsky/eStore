@@ -32,7 +32,7 @@ export class CardComponent implements OnInit {
   public get selectedCategory() {
     return this._selectedCategory;
   }
-  public pageSize = 10;
+  public pageSize = 12;
 
   /**
    * Private field for caching selected category
